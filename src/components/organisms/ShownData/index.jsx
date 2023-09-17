@@ -53,7 +53,7 @@ const ShownData = ({ data, onDownload }) => {
             </Typo>
             <FlexBox p="8px 16px" bgColor={"#A80000"} jc="center">
               <Typo color={"#FFFFFF"} weight="800" size="16px">
-                MAIN WAREHOUSE FINNS BEACH CLUB
+                WAREHOUSE FINNS BEACH CLUB
               </Typo>
             </FlexBox>
           </TableData>
