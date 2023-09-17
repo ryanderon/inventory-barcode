@@ -41,7 +41,7 @@ const ShownData = ({ data, onDownload }) => {
             height="100px"
             textAlign="left"
           >
-            <Typo size="42px" weight="800">
+            <Typo size="48px" weight="800">
               {data?.description}
             </Typo>
           </TableData>
@@ -62,7 +62,7 @@ const ShownData = ({ data, onDownload }) => {
               <Typo size="24px" weight="800">
                 Max
               </Typo>
-              <Typo size="72px" weight="800">
+              <Typo size="78px" weight="800">
                 {data?.max_mainwarehouse || data?.max_coldroom || 0}
               </Typo>
             </FlexBox>
