@@ -33,7 +33,12 @@ const ShownData = ({ data, onDownload }) => {
       <tbody>
         <tr>
           <TableData width="50%" height="100px">
-            <Barcode value={data?.bin_number} />
+            <Barcode
+              width={4}
+              fontSize={32}
+              fontOptions="bold"
+              value={data?.bin_number}
+            />
           </TableData>
           <TableData
             padding="0 24px "
