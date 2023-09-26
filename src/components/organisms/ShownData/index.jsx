@@ -32,9 +32,10 @@ const ShownData = ({ data, onDownload }) => {
     >
       <tbody>
         <tr>
-          <TableData width="50%" height="100px">
+          <TableData width="50%" height="350px">
             <Barcode
-              width={4}
+              width={5.5}
+              height={250}
               fontSize={32}
               fontOptions="bold"
               value={data?.bin_number}
@@ -63,11 +64,11 @@ const ShownData = ({ data, onDownload }) => {
             </FlexBox>
           </TableData>
           <TableData width="50%" height="100px">
-            <FlexBox dir="column" w="100%" ai="flex-start">
-              <Typo size="24px" weight="800">
-                Max
+            <FlexBox w="100%" ai="center" gap="24px">
+              <Typo size="48px" weight="800">
+                MAX:
               </Typo>
-              <Typo size="78px" weight="800">
+              <Typo size="150px" weight="800">
                 {data?.max_mainwarehouse || data?.max_coldroom || 0}
               </Typo>
             </FlexBox>
