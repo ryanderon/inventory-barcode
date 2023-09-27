@@ -3,25 +3,7 @@ import styled from "styled-components";
 import Barcode from "react-barcode";
 import Typo from "../../atoms/Typo";
 import FlexBox from "../../atoms/FlexBox";
-
-export const TableContainer = styled.table`
-  width: 100%;
-  border-spacing: 0;
-  margin: ${({ margin }) => margin};
-  border-collapse: collapse;
-  cursor: pointer;
-`;
-
-export const TableData = styled.td`
-  vertical-align: ${({ va }) => va || "center"};
-  border: ${({ border }) => border || `1px solid #000000`};
-  border-style: ${({ borderStyle }) => borderStyle};
-  width: ${({ width }) => width};
-  height: ${({ height }) => height};
-  border-collapse: collapse;
-  text-align: ${({ textAlign }) => textAlign || "center"};
-  padding: ${({ padding }) => padding || "8px"};
-`;
+import { TableContainer, TableData } from "../../atoms/Table";
 
 const ShownData = ({ data, onDownload }) => {
   return data?.map((data, index) => (
