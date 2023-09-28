@@ -50,12 +50,7 @@ const ShownData = ({ data, onDownload }) => {
                 MAX:
               </Typo>
               <Typo size="100px" weight="800">
-                {`${
-                  [null, "", undefined].includes(
-                    data?.max_mainwarehouse || data?.max_coldroom
-                  )
-                    ? data?.max_mainwarehouse || data?.max_coldroom
-                    : data?.max_mainwarehouse || data?.max_coldroom || 0
+                {`${data?.max_mainwarehouse || data?.max_coldroom || 0
                 } ${data?.unit || ""}`}
               </Typo>
             </FlexBox>
