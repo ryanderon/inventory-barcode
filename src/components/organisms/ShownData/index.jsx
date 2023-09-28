@@ -45,12 +45,14 @@ const ShownData = ({ data, onDownload }) => {
             </FlexBox>
           </TableData>
           <TableData width="50%" height="100px">
-            <FlexBox w="100%" ai="center" gap="24px">
+            <FlexBox w="100%" ai="center" gap="12px">
               <Typo size="48px" weight="800">
                 MAX:
               </Typo>
-              <Typo size="150px" weight="800">
-                {data?.max_mainwarehouse || data?.max_coldroom || 0}
+              <Typo size="100px" weight="800">
+                {`${data?.max_mainwarehouse || data?.max_coldroom || 0} ${
+                  data?.unit || ""
+                }`}
               </Typo>
             </FlexBox>
           </TableData>
