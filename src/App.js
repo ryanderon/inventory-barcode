@@ -158,8 +158,8 @@ function App() {
             <Typo size="14px" weight="800" textAlign="left" color={"#A80000"}>
               IMPORTANT NOTES: <br />
               UPLOAD A JSON FILE THAT CONTAINS: bin_number, description,
-              max_mainwarehouse, max_coldroom <br />
-              Otherwhise this page wouldn't work.
+              max_mainwarehouse, max_coldroom, and unit. <br />
+              Otherwise this page wouldn't work.
             </Typo>
           </FlexBox>
         )}
