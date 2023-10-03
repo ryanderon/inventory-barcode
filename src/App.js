@@ -132,7 +132,7 @@ function App() {
     <div className="App">
       <FlexBox w="100wh" dir="column" gap="12px" p="24px">
         <LoadingSpinner isVisible={isLoading} />
-        <FlexBox w="100%" gap="12px" ai="center">
+        <FlexBox w="100%" gap="12px" ai="center" wrap="wrap">
           <input value={search} onChange={handleChange} />
           <select name="row" onChange={handleFilter}>
             {rowDDL?.map((v, idx) => (
