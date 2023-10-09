@@ -6,6 +6,8 @@ import LoadingSpinner from "./components/molecules/LoadingSpinner";
 import ShownData from "./components/organisms/ShownData";
 import Typo from "./components/atoms/Typo";
 
+const MAX_CONCURRENT_DOWNLOADS = 2; // Adjust as needed
+
 const rowDDL = [
   "ALL ROW",
   "ROW 01",
@@ -57,6 +59,7 @@ function App() {
       setFilteredData(jsonData);
 
       setIsLoading(false);
+      // setFiles(e.target.result);
     };
   };
 
