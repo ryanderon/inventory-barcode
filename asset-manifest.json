@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/inventory-barcode/static/css/main.47577f29.css",
-    "main.js": "/inventory-barcode/static/js/main.e9fc1a1a.js",
+    "main.js": "/inventory-barcode/static/js/main.f4abea7d.js",
     "static/js/787.f36b4769.chunk.js": "/inventory-barcode/static/js/787.f36b4769.chunk.js",
     "index.html": "/inventory-barcode/index.html",
     "main.47577f29.css.map": "/inventory-barcode/static/css/main.47577f29.css.map",
-    "main.e9fc1a1a.js.map": "/inventory-barcode/static/js/main.e9fc1a1a.js.map",
+    "main.f4abea7d.js.map": "/inventory-barcode/static/js/main.f4abea7d.js.map",
     "787.f36b4769.chunk.js.map": "/inventory-barcode/static/js/787.f36b4769.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.47577f29.css",
-    "static/js/main.e9fc1a1a.js"
+    "static/js/main.f4abea7d.js"
   ]
 }
