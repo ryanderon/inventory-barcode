@@ -39,10 +39,9 @@ function App() {
       setFilteredData(
         data?.filter(
           (val) =>
-            val?.upc_code
+            val?.upc_code?.toString()
               ?.toLowerCase?.()
-              ?.includes(e?.target?.value?.toLowerCase()) &&
-            val?.row?.toLowerCase?.()?.includes(filter?.toLowerCase())
+              ?.includes(e?.target?.value?.toLowerCase())
         )
       );
     });
