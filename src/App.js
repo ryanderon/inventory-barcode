@@ -6,6 +6,7 @@ import LoadingSpinner from "./components/molecules/LoadingSpinner";
 import ShownData from "./components/organisms/ShownData";
 import Typo from "./components/atoms/Typo";
 import { rowDDL } from "./helpers";
+import NumberOnly from "./components/organisms/ShownData/NumberOnly";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -38,7 +39,7 @@ function App() {
       setFilteredData(
         data?.filter(
           (val) =>
-            val?.description
+            val?.upc_code
               ?.toLowerCase?.()
               ?.includes(e?.target?.value?.toLowerCase()) &&
             val?.row?.toLowerCase?.()?.includes(filter?.toLowerCase())
@@ -99,18 +100,20 @@ function App() {
     setFilter("");
   };
 
+  console.log(data)
+
   return (
     <div className="App">
       <FlexBox w="100wh" dir="column" gap="12px" p="24px">
         <LoadingSpinner isVisible={isLoading} />
         <FlexBox w="100%" gap="12px" ai="center" wrap="wrap">
           <input value={search} onChange={handleChange} />
-          <select name="row" onChange={handleFilter}>
+          {/* <select name="row" onChange={handleFilter}>
             {rowDDL?.map((v, idx) => (
               <option key={idx}>{v}</option>
             ))}
-          </select>
-          <button onClick={clearData}>Clear Data</button>
+          </select> */}
+          {/* <button onClick={clearData}>Clear Data</button> */}
           <input
             accept="application/json"
             type={"file"}
@@ -132,8 +135,10 @@ function App() {
           </FlexBox>
         )}
 
+        
+
         {!isPending && (
-          <ShownData data={filteredData} onDownload={downloadSpecificItem} />
+          <NumberOnly data={filteredData} onDownload={downloadSpecificItem} />
         )}
       </FlexBox>
     </div>
