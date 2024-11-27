@@ -1,7 +1,7 @@
 import React from "react";
 import Barcode from "react-barcode";
-import Typo from "../../atoms/Typo";
-import FlexBox from "../../atoms/FlexBox";
+// import Typo from "../../atoms/Typo";
+// import FlexBox from "../../atoms/FlexBox";
 import { TableContainer, TableData } from "../../atoms/Table";
 
 const ShownData = ({ data, onDownload }) => {
@@ -22,7 +22,7 @@ const ShownData = ({ data, onDownload }) => {
               value={data?.bin_number}
             />
           </TableData>
-          <TableData
+          {/* <TableData
             padding="0 24px "
             width="50%"
             height="100px"
@@ -31,9 +31,9 @@ const ShownData = ({ data, onDownload }) => {
             <Typo size="48px" weight="800">
               {data?.description}
             </Typo>
-          </TableData>
+          </TableData> */}
         </tr>
-        <tr>
+        {/* <tr>
           <TableData width="50%" height="100px">
             <Typo size="48px" weight="800">
               {data?.bin_number}
@@ -60,7 +60,7 @@ const ShownData = ({ data, onDownload }) => {
               </Typo>
             </FlexBox>
           </TableData>
-        </tr>
+        </tr> */}
       </tbody>
     </TableContainer>
   ));

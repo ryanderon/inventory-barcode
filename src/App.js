@@ -3,22 +3,22 @@ import html2canvas from "html2canvas";
 import "./App.css";
 import FlexBox from "./components/atoms/FlexBox";
 import LoadingSpinner from "./components/molecules/LoadingSpinner";
-import ShownData from "./components/organisms/ShownData";
+// import ShownData from "./components/organisms/ShownData";
 import Typo from "./components/atoms/Typo";
-import { rowDDL } from "./helpers";
+// import { rowDDL } from "./helpers";
 import NumberOnly from "./components/organisms/ShownData/NumberOnly";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
-  const [search, setSearch] = useState("");
-  const [filter, setFilter] = useState("");
+  // const [search, setSearch] = useState("");
+  // const [filter, setFilter] = useState("");
   const [isPending, startTransition] = useTransition();
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState(data);
 
   const handleFile = async (e) => {
-    setSearch("");
-    setFilter("");
+    // setSearch("");
+    // setFilter("");
     setIsLoading(true);
     const fileReader = new FileReader();
     fileReader.readAsText(e.target.files[0], "UTF-8");
@@ -32,46 +32,46 @@ function App() {
     };
   };
 
-  const handleChange = (e) => {
-    setSearch(e?.target?.value);
+  // const handleChange = (e) => {
+  //   setSearch(e?.target?.value);
 
-    startTransition(() => {
-      setFilteredData(
-        data?.filter(
-          (val) =>
-            val?.upc_code?.toString()
-              ?.toLowerCase?.()
-              ?.includes(e?.target?.value?.toLowerCase())
-        )
-      );
-    });
-  };
+  //   startTransition(() => {
+  //     setFilteredData(
+  //       data?.filter(
+  //         (val) =>
+  //           val?.upc_code?.toString()
+  //             ?.toLowerCase?.()
+  //             ?.includes(e?.target?.value?.toLowerCase())
+  //       )
+  //     );
+  //   });
+  // };
 
-  const handleFilter = (e) => {
-    setFilter(e?.target?.value);
+  // const handleFilter = (e) => {
+  //   setFilter(e?.target?.value);
 
-    if (e?.target?.value == "ALL ROW") {
-      startTransition(() => {
-        setFilteredData(
-          data?.filter((val) =>
-            val?.description?.toLowerCase?.()?.includes(search?.toLowerCase())
-          )
-        );
-      });
-    }
+  //   if (e?.target?.value == "ALL ROW") {
+  //     startTransition(() => {
+  //       setFilteredData(
+  //         data?.filter((val) =>
+  //           val?.description?.toLowerCase?.()?.includes(search?.toLowerCase())
+  //         )
+  //       );
+  //     });
+  //   }
 
-    startTransition(() => {
-      setFilteredData(
-        data?.filter(
-          (val) =>
-            val?.row
-              ?.toLowerCase?.()
-              ?.includes(e?.target?.value?.toLowerCase()) &&
-            val?.description?.toLowerCase?.()?.includes(search?.toLowerCase())
-        )
-      );
-    });
-  };
+  //   startTransition(() => {
+  //     setFilteredData(
+  //       data?.filter(
+  //         (val) =>
+  //           val?.row
+  //             ?.toLowerCase?.()
+  //             ?.includes(e?.target?.value?.toLowerCase()) &&
+  //           val?.description?.toLowerCase?.()?.includes(search?.toLowerCase())
+  //       )
+  //     );
+  //   });
+  // };
 
   const downloadSpecificItem = async (binNumber) => {
     setIsLoading(true);
@@ -92,21 +92,19 @@ function App() {
     }, 0);
   };
 
-  const clearData = () => {
-    setData([]);
-    setFilteredData([]);
-    setSearch("");
-    setFilter("");
-  };
-
-  console.log(data)
+  // const clearData = () => {
+  //   setData([]);
+  //   setFilteredData([]);
+  //   setSearch("");
+  //   setFilter("");
+  // };
 
   return (
     <div className="App">
       <FlexBox w="100wh" dir="column" gap="12px" p="24px">
         <LoadingSpinner isVisible={isLoading} />
         <FlexBox w="100%" gap="12px" ai="center" wrap="wrap">
-          <input value={search} onChange={handleChange} />
+          {/* <input value={search} onChange={handleChange} /> */}
           {/* <select name="row" onChange={handleFilter}>
             {rowDDL?.map((v, idx) => (
               <option key={idx}>{v}</option>
@@ -120,21 +118,17 @@ function App() {
           />
         </FlexBox>
 
-        {data?.length == 0 && (
+        {data?.length === 0 && (
           <FlexBox w="100%" dir="column">
             <Typo size="14px" weight="800">
               NO DATA FOUND.
             </Typo>
             <Typo size="14px" weight="800" textAlign="left" color={"#A80000"}>
               IMPORTANT NOTES: <br />
-              UPLOAD A JSON FILE THAT CONTAINS: bin_number, description,
-              max_mainwarehouse, max_coldroom, and unit. <br />
-              Otherwise this page wouldn't work.
+              UPLOAD A JSON FILE THAT CONTAINS: upc_code & description
             </Typo>
           </FlexBox>
         )}
-
-        
 
         {!isPending && (
           <NumberOnly data={filteredData} onDownload={downloadSpecificItem} />
